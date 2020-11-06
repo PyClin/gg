@@ -48,6 +48,16 @@ It is called `INRx`, a rupee token.
 
 * [Claimable balances](https://developers.stellar.org/docs/glossary/claimable-balance/), which allow an account to create a balance of any asset, and to designate another account to claim it. We use it for employees claiming their travel expenses from their employer in a hassle-free fashion.
 
+
+## Instructions on Usage
+
+Fire up your terminal and do:
+
+```bash
+docker-compose --env-file app/.env up
+```
+
+
 ## API documentation
 
 Postman Documentation for the microservice is publically available [here](https://documenter.getpostman.com/view/1756856/TVeiBpiD).
