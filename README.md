@@ -57,11 +57,21 @@ Fire up your terminal and do:
 docker-compose --env-file app/.env up
 ```
 
+For printing money xD.
+
+```bash
+→ cd app/
+→ python blockchain/asset.py 150
+```
+
+issuer creates 150 new `INRx` token and gives it to distributor. if no user input defaults to minting 1000 `INRx` tokens.
+
+
 
 ## API documentation
 
-Postman Documentation for the microservice is publically available [here](https://documenter.getpostman.com/view/1756856/TVeiBpiD).
+Postman Documentation for the microservice is publicly available [here](https://documenter.getpostman.com/view/1756856/TVeiBpiD).
 
 ## P.S
 
-This project wouldn't exist without [Stellar Laboratory](https://laboratory.stellar.org/#). It's ease of use is what made this project achievable. Along with their community [Python SDK](https://github.com/StellarCN/py-stellar-base), that `TransactionBuider` API, and their [examples](https://github.com/StellarCN/py-stellar-base/tree/master/examples) directory helped me a lot. Also the awesome people on their discord !!.
+This project wouldn't exist without [Stellar Laboratory](https://laboratory.stellar.org/#). Its ease of use is what made this project achievable. Along with their community [Python SDK](https://github.com/StellarCN/py-stellar-base), that `TransactionBuider` API, and their [examples](https://github.com/StellarCN/py-stellar-base/tree/master/examples) directory helped me a lot. Also the awesome people on their discord !!.
