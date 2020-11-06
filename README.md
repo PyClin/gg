@@ -19,6 +19,12 @@ It could power any sorts of travel where you usually spend rupee. Just here you'
 
 We also extended the same thing which can be used as a travel platform for employee travel claims regarding official work. Employess can travel anywhere in India and can claim their amount whenever they feel like.
 
+India is notorious for its cell connectivity. We still have a massive 2G subscriber base in the country. In fact, roughly 50% of [Airtel](https://www.airtel.in/)’s users are still on 2G. We can empower people for making offline payments for travel just like cash using our platform.
+
+It is also secure because the payments happen on blockchain and relevant credentials are encrypted
+using [Fernet](https://github.com/fernet/spec/blob/master/Spec.md), Fernet is basically AES128 in CBC mode with a SHA256 HMAC message authentication code.
+
+
 ## Travel like where?
 
 * Trams for Kolkata people.
@@ -29,6 +35,15 @@ We also extended the same thing which can be used as a travel platform for emplo
 * Mofussil Trains for Indian people in general.
 
 these are just few examples.
+
+
+## How does it work?
+
+Users deposit Rupees for INRx tokens in return, and they can spend it with all modes of government transport mentioned above. In contactless, cashless manner. With swag. 😎
+
+
+
+[![image.png](https://i.postimg.cc/jjCgYSJ0/image.png)](https://postimg.cc/TyMqrG9C)
 
 
 ## Key Stellar Features
@@ -46,7 +61,7 @@ It is called `INRx`, a rupee token.
 
 * [Sponsored reserves](https://developers.stellar.org/docs/glossary/sponsored-reserves/), which allow an account to cover lumen reserves for another account. We use it for creating new accounts with a small lumen minimum balance from sponsored account.
 
-* [Claimable balances](https://developers.stellar.org/docs/glossary/claimable-balance/), which allow an account to create a balance of any asset, and to designate another account to claim it. We use it for employees claiming their travel expenses from their employer in a hassle-free fashion.
+* [Claimable balances](https://developers.stellar.org/docs/glossary/claimable-balance/), which allow an account to create a balance of any asset, and to designate another account to claim it. We use it for employees claiming their travel expenses from their employer in a hassle-free fashion. This means it'd take 6 months for quantum computer to break the encryption.
 
 
 ## Instructions on Usage
