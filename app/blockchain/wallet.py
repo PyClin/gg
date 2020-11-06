@@ -20,7 +20,7 @@ def get_public_key(private_key):
 def get_balance(account_public_key: str) -> str:
 
     account_details = server.accounts().account_id(account_public_key).call()
-    return account_details["balances"][0]["balance"] + " " + inr_asset.code
+    return account_details["balances"][0]["balance"]
 
 def create_keypair():
 

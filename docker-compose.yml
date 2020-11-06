@@ -1,0 +1,30 @@
+version: "3"
+
+services:
+
+  db:
+    image: "redis:latest"
+    restart: "always"
+    ports:
+      - $REDIS_PORT:$REDIS_PORT
+    networks: 
+      - back
+      
+
+  gg:
+    build: "./"
+    image: "gg:latest"
+    restart: "always"
+    environment: 
+      - LISTEN_PORT=$NGINX_PORT
+    ports: 
+      - $NGINX_PORT:$NGINX_PORT
+    depends_on: 
+      - db
+    networks: 
+      - back
+    links: 
+      - db:db
+
+networks:
+  back:

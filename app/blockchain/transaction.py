@@ -253,7 +253,7 @@ def test_creation(stimulus: bool):
     return keypair
 
 
-def deposit_transaction(dtxn: DepositTransaction):
+def deposit_inrx_from_distributor(dtxn: DepositTransaction):
     
     source_keypair = Keypair.from_secret(dtxn.distributor_inrx_private_key)
     receiver_address = dtxn.recipient_public_key
@@ -277,7 +277,27 @@ def deposit_transaction(dtxn: DepositTransaction):
     return fee_bumped_resp["hash"]
 
 
+def sponsored_creation(private_key: str, stimulus: bool):
 
+    spons_txn_hash = sponsor_account_transaction(
+        private_key,
+        distributor_inrx_private_key,
+        stimulus
+        )
+
+    return spons_txn_hash
+
+
+def deposit_transaction(recipient_public_key: str, amount: str):
+
+    dtxn = DepositTransaction(
+        distributor_inrx_private_key,
+        recipient_public_key,
+        amount
+    )
+
+    txn_hash = deposit_inrx_from_distributor(dtxn)
+    return txn_hash
 
 
 if __name__ == "__main__":
@@ -315,7 +335,7 @@ if __name__ == "__main__":
         "100"
     )
 
-    dtxn_hash1 = deposit_transaction(dtxn1)
+    dtxn_hash1 = deposit_inrx_from_distributor(dtxn1)
     print(dtxn_hash1)
 
     # public user 2 depositing depositing 150 INRx
@@ -325,7 +345,7 @@ if __name__ == "__main__":
         "150"
     )
 
-    dtxn_hash2 = deposit_transaction(dtxn2)
+    dtxn_hash2 = deposit_inrx_from_distributor(dtxn2)
     print(dtxn_hash2)
 
     # employee 1 depositing 150 INRx
@@ -335,7 +355,7 @@ if __name__ == "__main__":
         "150"
     )
 
-    dtxn_hash3 = deposit_transaction(dtxn3)
+    dtxn_hash3 = deposit_inrx_from_distributor(dtxn3)
     print(dtxn_hash3)
 
     # employee 2 depositing 175 INRx
@@ -345,7 +365,7 @@ if __name__ == "__main__":
         "175"
     )
 
-    dtxn_hash4 = deposit_transaction(dtxn4)
+    dtxn_hash4 = deposit_inrx_from_distributor(dtxn4)
     print(dtxn_hash4)
 
 
@@ -356,7 +376,7 @@ if __name__ == "__main__":
         "3000"
     )
 
-    dtxn_hash5 = deposit_transaction(dtxn5)
+    dtxn_hash5 = deposit_inrx_from_distributor(dtxn5)
     print(dtxn_hash5)
 
 
