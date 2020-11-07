@@ -12,7 +12,7 @@ from stellar_sdk import Flag as AuthFlag
 from stellar_sdk import Keypair, Network, Server, TransactionBuilder
 
 LUMEN_MINIMUM_SPONSORED = "10"
-GOVT_STIMULUS_MINIMUM_INRX = "75"
+GOVT_STIMULUS_MINIMUM_INRX = "2500"
 
 dotenv.load_dotenv(verbose=True)
 

@@ -8,7 +8,7 @@ from db.read import get_wallet_secret
 
 def stimulus_check(wallet_type: str):
 
-    if wallet_type == "PUBLIC":
+    if wallet_type in ["PUBLIC", "EMPLOYEE"]:
         return True
     return False
 
